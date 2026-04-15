@@ -2,25 +2,81 @@
   {
     "id": 1,
     "titulo": "Dune",
-    "imagen": "dune.jpg",
-    "genero": "Aventura",
-    "sinopsis": "Un joven emprende una misión para salvar su mundo.",
-    "trailer": "https://www.youtube.com/embed/mSY_NbSmaUI"
+    "generos": ["Ciencia Ficción", "Aventura", "Drama"],
+    "imagen": "img/dune.webp",
+    "sinopsis": "Paul Atreides, un joven brillante y dotado nacido con un destino que va más allá de su comprensión, debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y su pueblo. Mientras las fuerzas malévolas estallan en un conflicto por el suministro exclusivo del recurso más valioso que existe en el planeta, solo sobrevivirán aquellos que puedan conquistar su propio miedo en esta épica odisea espacial.",
+    "trailer": "https://www.youtube.com/embed/mSY_NbSmaUI",
+    "estreno": "2024-03-01",
+    "precios": { "estreno": 5.00, "normal": 3.50 }
   },
   {
     "id": 2,
     "titulo": "50 primeras citas",
-    "imagen": "50-primeras-citas.jpg",
-    "genero": "Comedia",
-    "sinopsis": "Henry se enamora de Lucy, una mujer con pérdida de memoria a corto plazo.",
-    "trailer": "https://www.youtube.com/embed/17KJk3ErIx0"
+    "generos": ["Comedia", "Romance"],
+    "imagen": "img/50-primeras-citas.webp",
+    "sinopsis": "Henry Roth es un biólogo marino que vive en Hawái y evita el compromiso hasta que conoce a la encantadora Lucy Whitmore. Sin embargo, descubre que ella sufre de pérdida de memoria a corto plazo y olvida todo lo ocurrido durante el día al quedarse dormida. Henry decide entonces conquistarla cada mañana de su vida, inventando formas creativas y románticas para que ella se enamore de él una y otra vez a pesar de su condición.",
+    "trailer": "https://www.youtube.com/embed/17KJk3ErIx0",
+    "estreno": "2004-02-13",
+    "precios": { "estreno": 4.50, "normal": 3.00 }
   },
   {
     "id": 3,
-    "titulo": "Batman Caballero de la Noche",
-    "imagen": "batman-caballero-de-la-noche.webp",
-    "genero": "Acción",
-    "sinopsis": "La película comienza con el violento robo de uno de los bancos de la mafia por una banda de payasos.",
-    "trailer": "https://www.youtube.com/embed/dzQtWkpc2-c"
+    "titulo": "Batman, Caballero de la Noche",
+    "generos": ["Acción", "Crimen", "Thriller"],
+    "imagen": "img/batman-caballero-de-la-noche.webp",
+    "sinopsis": "Con la ayuda del teniente Jim Gordon y el fiscal de distrito Harvey Dent, Batman se propone destruir para siempre el crimen organizado en Gotham. El triunvirato demuestra ser eficaz, pero pronto se ven atrapados en un juego del gato y el ratón contra una mente criminal ascendente conocida como el Joker. Este villano sumerge a la ciudad en la anarquía y obliga al Caballero Oscuro a cruzar la delgada línea entre ser un héroe y convertirse en un vigilante.",
+    "trailer": "https://www.youtube.com/embed/dzQtWkpc2-c",
+    "estreno": "2008-07-18",
+    "precios": { "estreno": 5.50, "normal": 4.00 }
+  },
+  {
+    "id": 4,
+    "titulo": "Rental Family",
+    "generos": ["Drama", "Comedia"],
+    "imagen": "img/rental-family.webp",
+    "sinopsis": "Un actor estadounidense que atraviesa una crisis personal y profesional decide mudarse a Tokio para trabajar en una empresa de 'familias de alquiler'. Allí, es contratado para interpretar diferentes roles en la vida de personas desconocidas, lo que lo lleva a cuestionar la naturaleza de las conexiones humanas y la autenticidad en un mundo cada vez más solitario y performativo. A través de sus diversas asignaciones, descubre lecciones profundas sobre la empatía y el significado de pertenecer a algo real.",
+    "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "estreno": "2026-04-05",
+    "precios": { "estreno": 6.50, "normal": 4.50 }
+  },
+  {
+    "id": 5,
+    "titulo": "Project Hail Mary",
+    "generos": ["Ciencia Ficción", "Aventura"],
+    "imagen": "img/hail-mary.webp",
+    "sinopsis": "Ryland Grace es el único superviviente en una misión desesperada para salvar a la humanidad y la Tierra de una catástrofe solar. El problema es que al despertar no recuerda ni su propio nombre ni la naturaleza de su tarea. Con la ayuda de un inesperado aliado extraterrestre, deberá utilizar la ciencia, la lógica y una valentía increíble para resolver un misterio cósmico que amenaza con extinguir toda forma de vida conocida en el sistema solar.",
+    "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "estreno": "2026-03-20",
+    "precios": { "estreno": 7.00, "normal": 5.00 }
+  },
+  {
+    "id": 6,
+    "titulo": "Super Mario Galaxy",
+    "generos": ["Animación", "Fantasía", "Aventura"],
+    "imagen": "img/mario-galaxy.webp",
+    "sinopsis": "En esta nueva aventura cinematográfica, Mario se embarca en un viaje intergaláctico para rescatar a la Princesa Peach de las garras de Bowser, quien ha robado las estrellas de poder para construir su propio imperio en el centro del universo. Acompañado por Estela y los destellos, Mario deberá navegar por galaxias extrañas, desafiar la gravedad y reunir aliados inesperados en una épica batalla espacial que definirá el destino de todo el Reino Champiñón y más allá.",
+    "trailer": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "estreno": "2026-04-12",
+    "precios": { "estreno": 6.00, "normal": 4.00 }
+  },
+  {
+    "id": 7,
+    "titulo": "Oppenheimer",
+    "generos": ["Biografía", "Drama", "Historia"],
+    "imagen": "img/oppenheimer.webp",
+    "sinopsis": "La película profundiza en la mente de J. Robert Oppenheimer, el físico teórico que dirigió el Laboratorio de Los Álamos durante el Proyecto Manhattan. A través de una narrativa no lineal, somos testigos de los dilemas éticos y la intensa presión política que rodearon la creación de la primera bomba atómica. La obra explora no solo el éxito técnico del proyecto, sino también el tormento moral y las consecuencias devastadoras que cambiaron el curso de la historia moderna para siempre.",
+    "trailer": "https://www.youtube.com/embed/uYPbbksJxIg",
+    "estreno": "2023-07-21",
+    "precios": { "estreno": 5.50, "normal": 3.50 }
+  },
+  {
+    "id": 8,
+    "titulo": "Wicked",
+    "generos": ["Fantasía", "Musical", "Drama"],
+    "imagen": "img/wicked.webp",
+    "sinopsis": "Mucho antes de que Dorothy llegara a la tierra de Oz, se forjó una improbable amistad entre dos jóvenes brujas: Elphaba, incomprendida debido a su piel verde, y Glinda, una joven popular y ambiciosa. Sus caminos se cruzan en la Universidad de Shiz, donde sus sueños y aspiraciones las llevan por senderos opuestos frente al corrupto gobierno del Mago de Oz. Esta historia revela los secretos detrás de la Bruja Malvada del Oeste y la Bruja Buena del Norte en una escala épica.",
+    "trailer": "https://www.youtube.com/embed/6COmYeLsz4c",
+    "estreno": "2024-11-22",
+    "precios": { "estreno": 5.50, "normal": 3.50 }
   }
 ]
