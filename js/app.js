@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    const haSidoVisitado = localStorage.getItem("bienvenidaMostrada");
+
+    if (!haSidoVisitado) {
+        alert("¡Bienvenido a Toho Cinemas! Para todos aquellos que aman las películas.");
+        // Guardamos la marca para que no aparezca de nuevo
+        localStorage.setItem("bienvenidaMostrada", "true");
+    }
+    
     // Tarea 5: Mostrar spinner y ocultar contenedor
     $("#loading-spinner").show();
     $("#lista-peliculas").hide();
