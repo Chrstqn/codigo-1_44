@@ -2,20 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Detalle de Película - CinePlus</title>
+  <title>Detalle de Película - Toho Cinemas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="bg-light">
   <div class="container py-5">
     <div class="text-center mb-4">
-      <h2 id="titulo" class="mb-3 text-uppercase fw-bold"></h2>
+      <h2 id="titulo" class="mb-3 text-uppercase fw-bold text-primary"></h2>
 
-      <div class="alert alert-info" role="alert">
+      <div class="alert alert-info shadow-sm" role="alert">
         ¡Disfruta del tráiler oficial y conoce más sobre esta película!
       </div>
 
-      <div class="ratio ratio-16x9 mb-4 shadow-sm rounded">
+      <div class="ratio ratio-16x9 mb-4 shadow rounded overflow-hidden">
         <iframe id="trailer" src="" allowfullscreen></iframe>
       </div>
     </div>
@@ -28,20 +29,30 @@
         <div class="col-md-8">
           <div class="card-body p-4">
             <h5 class="card-title fw-bold">Sinopsis</h5>
-            <p id="sinopsis" class="card-text text-muted"></p>
+            <p id="sinopsis" class="card-text text-muted lead"></p>
 
             <hr>
             
             <div id="contenedor-badges">
-                <span id="genero" class="badge bg-secondary p-2"></span>
-            </div>
+                <span id="genero" class="badge bg-secondary p-2 mb-2"></span>
+                </div>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="mt-5 mb-5">
+      <div class="d-flex align-items-center mb-4 border-bottom pb-2">
+        <h4 class="fw-bold mb-0">Opiniones de la Comunidad</h4>
+        <span class="badge bg-dark ms-2">Fans Toho</span>
+      </div>
+      
+      <div id="contenedor-resenas" class="row">
+          </div>
+    </div>
+
     <div class="text-center">
-      <a href="../index.html" class="btn btn-outline-dark px-5">Volver al inicio</a>
+      <a href="../index.html" class="btn btn-outline-dark px-5 py-2 shadow-sm">Volver al inicio</a>
     </div>
   </div>
 
@@ -51,6 +62,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get("id");
 
+      // 1. Cargar datos de la película
       $.ajax({
         url: "../data/peliculas.json",
         method: "GET",
@@ -59,7 +71,7 @@
           const peli = peliculas.find((p) => p.id == id);
           
           if (peli) {
-            // Lógica de Precios
+            // Lógica de Precios y Categoría
             const hoy = new Date();
             const fechaE = new Date(peli.estreno);
             const esEstreno = (hoy - fechaE) / (1000 * 60 * 60 * 24) <= 30;
@@ -67,21 +79,26 @@
             const badgeClase = esEstreno ? 'bg-danger' : 'bg-primary';
             const badgeTexto = esEstreno ? 'ESTRENO' : 'REGULAR';
 
-            // Inyectar datos en el HTML
+            // Inyectar datos principales
             $("#titulo").text(peli.titulo);
-            $("#poster").attr("src", "../" + peli.imagen); // Ruta corregida
+            $("#poster").attr("src", "../" + peli.imagen); 
             $("#sinopsis").text(peli.sinopsis);
             $("#trailer").attr("src", peli.trailer);
-      
             $("#genero").text(peli.generos.join(" | "));
 
+            // Inyectar info de precio y badge de estado
             $("#genero").after(`
               <span class="badge ${badgeClase} ms-2 p-2">${badgeTexto}</span>
               <div class="mt-4">
-                <small class="text-muted d-block">Precio de entrada:</small>
+                <small class="text-muted d-block fw-bold">Precio de entrada:</small>
                 <h3 class="text-success fw-bold">$${precio.toFixed(2)}</h3>
+                <a href="renta.html" class="btn btn-success mt-2">Alquilar esta película</a>
               </div>
             `);
+
+            // 2. Cargar reseñas relacionadas (Punto 7)
+            cargarResenas(id);
+
           } else {
             mostrarError();
           }
@@ -90,6 +107,50 @@
           mostrarError();
         }
       });
+
+      // Función específica para las reseñas filtradas por ID
+      function cargarResenas(peliId) {
+        $.ajax({
+          url: "../data/resenas.json",
+          method: "GET",
+          dataType: "json",
+          success: function (resenas) {
+            // Filtrar las reseñas que coincidan con el ID de la película actual
+            const filtradas = resenas.filter(r => r.peliId == peliId);
+            let html = "";
+
+            if (filtradas.length > 0) {
+              filtradas.forEach(r => {
+                // Generar estrellas visuales
+                let estrellas = '<span class="text-warning">' + "★".repeat(r.estrellas) + "</span>" + 
+                                '<span class="text-muted">' + "☆".repeat(5 - r.estrellas) + "</span>";
+                
+                html += `
+                  <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-0 shadow-sm bg-white">
+                      <div class="card-body">
+                        <div class="mb-2">${estrellas}</div>
+                        <h6 class="fw-bold mb-1">${r.usuario}</h6>
+                        <p class="small text-muted mb-0 italic" style="font-style: italic;">"${r.comentario}"</p>
+                      </div>
+                    </div>
+                  </div>`;
+              });
+            } else {
+              // Caso para películas sin reseñas (ej. ID 8)
+              html = `
+                <div class="col-12 text-center py-5 bg-white rounded shadow-sm">
+                  <p class="text-muted mb-0">Aún no hay reseñas para esta película.</p>
+                  <p class="fw-bold text-primary">¡Sé el primero en compartir tu opinión!</p>
+                </div>`;
+            }
+            $("#contenedor-resenas").html(html);
+          },
+          error: function() {
+            $("#contenedor-resenas").html('<p class="text-danger">No se pudieron cargar las reseñas.</p>');
+          }
+        });
+      }
 
       function mostrarError() {
         $(".container").html(`

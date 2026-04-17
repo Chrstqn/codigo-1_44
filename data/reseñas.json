@@ -1,0 +1,23 @@
+[
+  { "peliId": 1, "usuario": "Laura García", "estrellas": 5, "comentario": "¡Una obra maestra técnica!" },
+  { "peliId": 1, "usuario": "Marcos Solo", "estrellas": 4, "comentario": "Muy buena, aunque un poco larga." },
+  { "peliId": 1, "usuario": "Icem H.", "estrellas": 2, "comentario": "No me termina de convencer la actuación" },
+  { "peliId": 2, "usuario": "Ana Martínez", "estrellas": 5, "comentario": "La mejor de su género este año." },
+  { "peliId": 2, "usuario": "Roberto C.", "estrellas": 3, "comentario": "Entretenida, pero predecible." },
+  { "peliId": 2, "usuario": "Alejandro C.", "estrellas": 4, "comentario": "Me gustaría que tenga mas efectos prácticos" },
+  { "peliId": 3, "usuario": "Elena F.", "estrellas": 5, "comentario": "Visualmente es una delicia." },
+  { "peliId": 3, "usuario": "Juan Paez", "estrellas": 4, "comentario": "Digna de ver en el cine." },
+  { "peliId": 3, "usuario": "Anonimo", "estrellas": 5, "comentario": "El doblaje es de lo mejor" },
+  { "peliId": 4, "usuario": "Carlos Ruiz", "estrellas": 5, "comentario": "No paré de reír, recomendada." },
+  { "peliId": 4, "usuario": "Sofía V.", "estrellas": 4, "comentario": "Guion muy original." },
+  { "peliId": 4, "usuario": "Anaxagoras", "estrellas": 1, "comentario": "El guíon no corresponde a los libros dando una adaptación mediocre" },
+  { "peliId": 5, "usuario": "Luis Miguel", "estrellas": 3, "comentario": "Cuando calienta el sol, aquí en la playa..." },
+  { "peliId": 5, "usuario": "Leslie G.", "estrellas": 3, "comentario": "La película esta entretenida pero esperaba algo mas" },
+  { "peliId": 5, "usuario": "Justin", "estrellas": 1, "comentario": "*Comentario eliminado por normas de la comunidad*" },
+  { "peliId": 6, "usuario": "Diana T.", "estrellas": 5, "comentario": "Actuaciones de nivel Oscar." },
+  { "peliId": 6, "usuario": "Pedro S.", "estrellas": 4, "comentario": "Superó mis expectativas." },
+  { "peliId": 6, "usuario": "Anonimo", "estrellas": 4, "comentario": "" },
+  { "peliId": 7, "usuario": "Marta G.", "estrellas": 5, "comentario": "Simplemente perfecta." },
+  { "peliId": 7, "usuario": "Alexis B", "estrellas": 5, "comentario": "Estuvo buena" },
+  { "peliId": 7, "usuario": "Ramon D.", "estrellas": 1, "comentario": "no se que mas podria poner acerca de la pelicula" }
+]
